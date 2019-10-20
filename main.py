@@ -8,7 +8,7 @@ print("Select the option for text for encryption input:")
 
 
 whattodo = str(input("Do you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) "))
-print(whattodo)
+# print(whattodo)
 
 while whattodo.upper() not in ("Q","FILE","CMND"):
     print("Input was not recognised!!! ")
@@ -28,6 +28,9 @@ else:
 
 open("Output.txt", "w").close()
 outputfile = open("Output.txt","w")
+
+open("Encrypted_message.txt", "w").close()
+Encryptedmessage = open("Encrypted_message.txt","w")
 
 al = " §±!@#$%^&*()_+-={[]}\?/.>,<~`;:\'|ABCDEFGHIJKLMNOPRSTUVWabcdefghijklmnoprstuvwxyz0123456789\n\""
 allist = []
@@ -71,9 +74,12 @@ for b,element in enumerate(encriptedtext):
 encriptedtext2 = ' '.join(encriptedtext)
 
 encriptedtext2 = encriptedtext2.replace(" ","").replace("kodiniszodis"," ")
-print("encriptedtext2",encriptedtext2)
+# print("encriptedtext2",encriptedtext2)
+Encryptedmessage.write(encriptedtext2)
 
 
+
+ 
 # DECRIPTION
 
 for i in t2e:
