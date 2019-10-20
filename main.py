@@ -3,7 +3,7 @@ import random
 # import text from file
 filename = "texttoencrypt.txt"
 openedfile = open(filename, "r")
-
+outputfile = open("Output.txt","w")
 
 
 
@@ -96,3 +96,7 @@ dencriptedtext2 = ' '.join(dencriptedtext)
 
 dencriptedtext2 = dencriptedtext2.replace(" ","").replace("kodiniszodis"," ")
 print("dencriptedtext2",dencriptedtext2)
+
+outputfile.write(dencriptedtext2)
+openedfile.close()
+outputfile.close()
