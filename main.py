@@ -1,6 +1,16 @@
 import random
 
-al = " abcdefghijklmnoprstuvxyz0123456789"
+# import text from file
+filename = "texttoencrypt.txt"
+openedfile = open(filename, "r")
+
+
+
+
+
+
+
+al = " abcdefghijklmnoprstuvwxyz0123456789\n\""
 allist = []
 for i in al:
     allist.append(i)
@@ -10,7 +20,12 @@ alphasize = len(allist)
 
 
 # t2e = "bandymas vienas"
-t2e = "as esu kulverstukas o tu esi kulverstukas2345"
+# t2e = "as esu kulverstukas o tu esi kulverstukas2345"
+# t2e = """as esu kulverstukas o tu esi kulverstukas2345
+#         new line kabutes\"\" """
+
+t2e = openedfile.read()
+
 print("tekstas kodavimui: ",t2e)
 key = []
 for i in t2e:
@@ -38,12 +53,12 @@ for i in encryptedindexes:
 for b,element in enumerate(encriptedtext):
     if element == ' ':
         # print("found")
-        encriptedtext[b] = "^"
+        encriptedtext[b] = "kodiniszodis"
 
 # print("encryptedtext", encriptedtext)
 encriptedtext2 = ' '.join(encriptedtext)
 
-encriptedtext2 = encriptedtext2.replace(" ","").replace("^"," ")
+encriptedtext2 = encriptedtext2.replace(" ","").replace("kodiniszodis"," ")
 print("encriptedtext2",encriptedtext2)
 
 
@@ -74,10 +89,10 @@ for i in dencryptedindexes:
 for b,element in enumerate(dencriptedtext):
     if element == ' ':
         # print("found")
-        dencriptedtext[b] = "^"
+        dencriptedtext[b] = "kodiniszodis"
 
 # print("dencryptedtext", dencriptedtext)
 dencriptedtext2 = ' '.join(dencriptedtext)
 
-dencriptedtext2 = dencriptedtext2.replace(" ","").replace("^"," ")
+dencriptedtext2 = dencriptedtext2.replace(" ","").replace("kodiniszodis"," ")
 print("dencriptedtext2",dencriptedtext2)
