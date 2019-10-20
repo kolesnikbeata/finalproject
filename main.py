@@ -23,7 +23,7 @@ if whattodo.upper() == "FILE":
 elif whattodo.upper() == "CMND":
     t2e = input("Input the text you want to be encrypted: ") 
 else: 
-    print("Exiting....")
+    print("\nExiting....\n")
     exit()
 
 open("Output.txt", "w").close()
@@ -32,7 +32,7 @@ outputfile = open("Output.txt","w")
 open("Encrypted_message.txt", "w").close()
 Encryptedmessage = open("Encrypted_message.txt","w")
 
-al = " §±!@#$%^&*()_+-={[]}\?/.>,<~`;:\'|ABCDEFGHIJKLMNOPRSTUVWabcdefghijklmnoprstuvwxyz0123456789\n\""
+al = " §±!@#$%^&*()_+-={[]}\?/.>,<~`;:\'|AqQBCDEFGHIJKLMNOPRSTUVWabcdefghijklmnoprstuvwxyz0123456789\n\""
 allist = []
 for i in al:
     allist.append(i)
@@ -40,8 +40,10 @@ for i in al:
 alphasize = len(allist)
 # print(alphasize)
 
+print("\nPlease wait...")
+print("\nEncryption machine is working on ciphering your text...")
 
-print("tekstas kodavimui: ",t2e)
+# print("tekstas kodavimui: ",t2e)
 key = []
 for i in t2e:
     key.append(random.randrange(0,len(allist)+1))
@@ -76,10 +78,15 @@ encriptedtext2 = ' '.join(encriptedtext)
 encriptedtext2 = encriptedtext2.replace(" ","").replace("kodiniszodis"," ")
 # print("encriptedtext2",encriptedtext2)
 Encryptedmessage.write(encriptedtext2)
+print("""
+""")
+print("**************************************************************************")
+print("Your text was encrypted. Find encrypted text in Encrypted_message.txt file")
+print("**************************************************************************")
 
+print("""
+""")
 
-
- 
 # DECRIPTION
 
 for i in t2e:
