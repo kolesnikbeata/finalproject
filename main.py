@@ -1,16 +1,33 @@
 # coding=utf-8
 import random
+import sys
+
+print("Encryption machine is starting...")
+print("Select the option for text for encryption input:")
 
 
-# import text from file
-filename = "texttoencrypt.txt"
-openedfile = open(filename, "r")
+
+whattodo = str(input("Do you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) "))
+print(whattodo)
+
+while whattodo.upper() not in ("Q","FILE","CMND"):
+    print("Input was not recognised!!! ")
+    whattodo = input("Do you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) ")
+
+
+if whattodo.upper() == "FILE":
+    # import text from file
+    filename = "texttoencrypt.txt"
+    openedfile = open(filename, "r")
+    t2e = openedfile.read()
+elif whattodo.upper() == "CMND":
+    t2e = input("Input the text you want to be encrypted: ") 
+else: 
+    print("Exiting....")
+    exit()
+
 open("Output.txt", "w").close()
 outputfile = open("Output.txt","w")
-
-
-
-
 
 al = " §±!@#$%^&*()_+-={[]}\?/.>,<~`;:\'|ABCDEFGHIJKLMNOPRSTUVWabcdefghijklmnoprstuvwxyz0123456789\n\""
 allist = []
@@ -20,13 +37,6 @@ for i in al:
 alphasize = len(allist)
 # print(alphasize)
 
-
-# t2e = "bandymas vienas"
-# t2e = "as esu kulverstukas o tu esi kulverstukas2345"
-# t2e = """as esu kulverstukas o tu esi kulverstukas2345
-#         new line kabutes\"\" """
-
-t2e = openedfile.read()
 
 print("tekstas kodavimui: ",t2e)
 key = []
@@ -100,5 +110,8 @@ dencriptedtext2 = dencriptedtext2.replace(" ","").replace("kodiniszodis"," ")
 print("dencriptedtext2",dencriptedtext2)
 
 outputfile.write(dencriptedtext2)
-openedfile.close()
+
+if whattodo.upper() == "FILE":
+    openedfile.close()
+
 outputfile.close()
