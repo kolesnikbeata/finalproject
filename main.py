@@ -1,16 +1,18 @@
+# coding=utf-8
 import random
+
 
 # import text from file
 filename = "texttoencrypt.txt"
 openedfile = open(filename, "r")
+open("Output.txt", "w").close()
 outputfile = open("Output.txt","w")
 
 
 
 
 
-
-al = " abcdefghijklmnoprstuvwxyz0123456789\n\""
+al = " §±!@#$%^&*()_+-={[]}\?/.>,<~`;:\'|ABCDEFGHIJKLMNOPRSTUVWabcdefghijklmnoprstuvwxyz0123456789\n\""
 allist = []
 for i in al:
     allist.append(i)
