@@ -2,17 +2,17 @@
 import random
 import sys
 
-print("Encryption machine is starting...")
-print("Select the option for text for encryption input:")
+print("\nEncryption machine is starting...")
+print("\nSelect the option for text for encryption input:")
 
 
 
-whattodo = str(input("Do you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) "))
+whattodo = str(input("\nDo you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) "))
 # print(whattodo)
 
 while whattodo.upper() not in ("Q","FILE","CMND"):
     print("Input was not recognised!!! ")
-    whattodo = input("Do you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) ")
+    whattodo = input("\nDo you want to encrypt text from file or to write your own text into cmnd line? (File/CMND/Q - quit) ")
 
 
 if whattodo.upper() == "FILE":
@@ -21,7 +21,7 @@ if whattodo.upper() == "FILE":
     openedfile = open(filename, "r")
     t2e = openedfile.read()
 elif whattodo.upper() == "CMND":
-    t2e = input("Input the text you want to be encrypted: ") 
+    t2e = input("\nInput the text you want to be encrypted: ") 
 else: 
     print("\nExiting....\n")
     exit()
@@ -31,6 +31,9 @@ outputfile = open("Output.txt","w")
 
 open("Encrypted_message.txt", "w").close()
 Encryptedmessage = open("Encrypted_message.txt","w")
+
+open("key.txt", "w").close()
+keyfile = open("key.txt","w")
 
 al = " §±!@#$%^&*()_+-={[]}\?/.>,<~`;:\'|AqQBCDEFGHIJKLMNOPRSTUVWabcdefghijklmnoprstuvwxyz0123456789\n\""
 allist = []
@@ -87,13 +90,31 @@ print("*************************************************************************
 print("""
 """)
 
-# DECRIPTION
+
+
+
+
 
 for i in t2e:
     key.append(random.randrange(0,len(allist)+1))
 # print("key", key)
+for i in key:
+    i = str(i)
+    keyfile.write(i)
 
 # def alphacalculator(list,number):
+
+
+savekey = input(" Do you want to save the key? Y/N")
+while savekey.upper() not in ("Y","N"):
+    savekey = input("Invalid input. Do you want to save the key? Y/N ")
+if savekey.upper() == "N":
+    keyfile.close()
+    open("key.txt", "w").close()
+
+
+
+# DECRIPTION
 
 t2deindexed = [] 
 for c in encriptedtext2:
