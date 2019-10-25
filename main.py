@@ -105,12 +105,36 @@ for i in key:
 # def alphacalculator(list,number):
 
 
-savekey = input(" Do you want to save the key? Y/N")
+savekey = input(" Do you want to save the key? Y/N ")
 while savekey.upper() not in ("Y","N"):
     savekey = input("Invalid input. Do you want to save the key? Y/N ")
 if savekey.upper() == "N":
     keyfile.close()
     open("key.txt", "w").close()
+    print("---------!!!!!!!!--------")
+    print("ALERT - KEY WAS NOT SAVED")
+    print("---------!!!!!!!!--------")
+else:
+    print("**************************")
+    print("KEY WAS SUCCESSFULLY SAVED")
+    print("**************************")
+
+
+decryptmessage = input("Do you want to decrypt your message? Y/N ")
+
+while decryptmessage.upper() not in ("Y","N"):
+    decryptmessage = input("Invalid input. Do you want to save the key? Y/N ")
+if decryptmessage.upper() == "N":
+    print("\nExiting....\n")
+    exit()
+else:
+    if savekey.upper() == "N":
+        print("\n\n\n\n\nYou have not saved your key!!!! Your message is lost forever\n\n\n")
+        print("\nExiting....\n")
+        exit()
+    else:
+        print("\n\n Decrycpting\n\n\n\n")
+        print("Please wait...\n\n")
 
 
 
@@ -143,6 +167,9 @@ dencriptedtext2 = ' '.join(dencriptedtext)
 dencriptedtext2 = dencriptedtext2.replace(" ","").replace("kodiniszodis"," ")
 print("dencriptedtext2",dencriptedtext2)
 
+
+
+print("Congrats. Your message was decrypted. Find the results in program files")
 outputfile.write(dencriptedtext2)
 
 if whattodo.upper() == "FILE":
