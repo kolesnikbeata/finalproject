@@ -58,7 +58,7 @@ Encryptedmessage.write(encriptedtext2)
 print("""
 """)
 print("**************************************************************************")
-print("Your text was encrypted. Find encrypted text in Encrypted_message.txt file")
+print("Your text was encrypted. Find encrypted text in encrypted_message.txt file")
 print("**************************************************************************")
 print("""
 """)
@@ -93,7 +93,7 @@ else:
         print("\nExiting....\n")
         exit()
     else:
-        print("\n\n Decrycpting\n\n\n\n")
+        print("\n\nDecrycpting\n\n\n\n")
         print("Please wait...\n\n")
 
 t2deindexed = [] 
