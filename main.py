@@ -73,8 +73,7 @@ elif encryptordecrypt.upper() == "E":
     """)
     if whattodo.upper() == "FILE":
         openedfile.close()
-    # for i in t2e:
-    #     key.append(random.randrange(0,len(allist)+1))
+
     for i in key:
         i = str(i)
         keyfile.write(i)
@@ -104,34 +103,24 @@ else:
     open("Output.txt", "w").close()
     outputfile = open("Output.txt","w")
 
-    # decryptmessage = input("Do you want to decrypt your message? Y/N ")
-    # while decryptmessage.upper() not in ("Y","N"):
-    #     decryptmessage = input("Invalid input. Do you want to decrypt your message? Y/N ")
-    # if decryptmessage.upper() == "N":
-    #     print("\nExiting....\n")
-    #     exit()
-    # else:
     if open("key.txt","r").read() == "":
         print("\n\n\n\n\nYou have not saved your key!!!! Your message is lost forever\n\n\n")
         print("\nExiting....\n")
         exit()
     else:
-        print("\n\nDecrycpting\n\n\n\n")
+        print("\n\nDecrycpting\n\n")
         print("Please wait...\n\n")
 
     t2deindexed = [] 
     for c in open("encrypted_message.txt","r").read():
         t2deindexed.append(allist.index(c))
-    # print("t2dindexed",t2deindexed)
 
     dencryptedindexes = []
     readkey = open("key.txt","r").readlines()
-    # print("readkey",readkey)
     keylist = []
     for i in readkey:
         i = int(i)
         keylist.append(i)
-    # print("key",keylist)
     withkey = zip(t2deindexed,keylist)
     for a,b in  withkey:
         dencryptedindexes.append(a+b-len(allist))
@@ -140,7 +129,7 @@ else:
     for i in dencryptedindexes:
         dencriptedtext.append(allist[i])
     dencriptedtext2 = "".join(dencriptedtext)
-    # print("dencriptedtext2",dencriptedtext2)
+
     print("Congrats. Your message was decrypted. Find the results in program files")
     outputfile.write(dencriptedtext2)
     
