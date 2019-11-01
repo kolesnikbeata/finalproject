@@ -19,21 +19,25 @@ When receiver knows the initial set of symbols and have the randomly generated k
 
 All usual symbols from the keybord can be used for encryption.
 
-**HOW TO RUN A PROGARM?**
+**HOW TO RUN A PROGRAM?**
 
 To start a prograrm run _main.py_ in terminal.
 
-You will be able to select how you would like to input the message for encryption. Two methods are available:
+Machine can encode and decode messages. You need to select which action you would like to do.
+
+If you want to encode a message you will be able to select the method of input for encryption. Two methods are available:
 * to input the message directly,
 * to use the message from the file "texttoencrypt.txt"
 
 After Encrypting the message, program will ask if you want to:
-* save the key and initial indexes of symbols needed to decrypt the code.
-* decrypt the message using the program 
+* save the key and initial indexes of symbols needed to decrypt the code. Remember - without key saved - it will be impossible to decode the message.
+
+If you want to decode your message - key.txt and encrypted message need to be saved.
+
 
 **STUCTURE OF FILES**
 
 * texttoencrypt.txt - file, that consist the message, you can chose to be encrypted
-* Encrypted_message.txt - file, where encrypted message will be saved after successful run of the progarm 
+* encrypted_message.txt - file, where encrypted message will be saved after successful run of the progarm 
 * key.txt - file, where key, needed to decrypt the encrypted file will be saved adter successful run of the progam 
-* Output - file, that gives back the initial message, that was encrypted.
+* output - file, that gives back the initial message, that was encrypted.
