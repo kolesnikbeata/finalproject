@@ -21,7 +21,7 @@ All usual symbols from the keybord can be used for encryption.
 
 **HOW TO RUN A PROGRAM?**
 
-To start a prograrm run _main.py_ in terminal.
+To start a program run _main.py_ in terminal.
 
 Machine can encode and decode messages. You need to select which action you would like to do.
 
@@ -29,10 +29,9 @@ If you want to encode a message you will be able to select the method of input f
 * to input the message directly,
 * to use the message from the file "texttoencrypt.txt"
 
-After Encrypting the message, program will ask if you want to:
-* save the key and initial indexes of symbols needed to decrypt the code. Remember - without key saved - it will be impossible to decode the message.
+After Encrypting the message, program will ask if you want to save the key needed to decrypt the code. Remember - without key saved - it will be impossible to decode the message.
 
-If you want to decode your message - key.txt and encrypted message need to be saved.
+key.txt and encrypted_message.txt is used for decoding. Decoded message is saved in output.txt file after decoder mashine finishes the job.
 
 
 **STUCTURE OF FILES**
